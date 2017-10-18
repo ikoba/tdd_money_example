@@ -3,6 +3,6 @@ class Money
   private :amount=
 
   def ==(money)
-    amount == money.amount
+    amount == money.amount && self.class == money.class
   end
 end
