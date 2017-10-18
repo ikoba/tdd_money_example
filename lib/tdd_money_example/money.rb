@@ -25,6 +25,10 @@ class Money
     Money.new(amount * multiplier, currency)
   end
 
+  def +(addend)
+    Money.new(amount + addend.amount, currency)
+  end
+
   def to_s
     "#{amount} #{currency}"
   end
