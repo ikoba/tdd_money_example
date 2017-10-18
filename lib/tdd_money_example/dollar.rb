@@ -5,7 +5,7 @@ class Dollar
     self.amount = amount
   end
 
-  def times(multiplier)
+  def *(multiplier)
     return Dollar.new(amount * multiplier)
   end
 end
