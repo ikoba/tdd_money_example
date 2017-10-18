@@ -18,6 +18,14 @@ class Money
   end
 
   def ==(money)
-    amount == money.amount && self.class == money.class
+    amount == money.amount && self.currency == money.currency
+  end
+
+  def *(multiplier)
+    Money.new(amount * multiplier, currency)
+  end
+
+  def to_s
+    "#{amount} #{currency}"
   end
 end
