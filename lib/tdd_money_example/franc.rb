@@ -1,16 +1,11 @@
-class Franc
-  attr_accessor :amount
-  private :amount=
+require_relative 'money'
 
+class Franc < Money
   def initialize(amount)
     self.amount = amount
   end
 
   def *(multiplier)
     Franc.new(amount * multiplier)
-  end
-
-  def ==(object)
-    amount == object.amount
   end
 end

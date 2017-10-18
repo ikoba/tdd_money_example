@@ -10,6 +10,8 @@ class MoneyTest < Minitest::Test
   def test_equality
     assert Dollar.new(5) == Dollar.new(5)
     refute Dollar.new(5) == Dollar.new(6)
+    assert Franc.new(5) == Franc.new(5)
+    refute Franc.new(5) == Franc.new(6)
   end
 
   def test_franc_multiplication
