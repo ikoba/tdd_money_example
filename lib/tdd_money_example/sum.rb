@@ -1,14 +1,13 @@
 class Sum
-  attr_accessor :augend, :addend
-  private :augend=, :addend=
+  attr_reader :augend, :addend
 
   def initialize(augend, addend)
-    self.augend = augend
-    self.addend = addend
+    @augend = augend
+    @addend = addend
   end
 
   def reduce(bank, to)
-    amount = augend.amount + addend.amount
-    Money.new(amount, to)
+    @amount = augend.amount + addend.amount
+    Money.new(@amount, to)
   end
 end

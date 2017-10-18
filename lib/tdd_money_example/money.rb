@@ -1,6 +1,5 @@
 class Money
-  attr_accessor :amount, :currency
-  private :amount=, :currency=
+  attr_reader :amount, :currency
 
   class << self
     def dollar(amount)
@@ -13,16 +12,16 @@ class Money
   end
 
   def initialize(amount, currency)
-    self.amount = amount
-    self.currency = currency
+    @amount = amount
+    @currency = currency
   end
 
   def ==(money)
-    amount == money.amount && self.currency == money.currency
+    @amount == money.amount && @currency == money.currency
   end
 
   def *(multiplier)
-    Money.new(amount * multiplier, currency)
+    Money.new(@amount * multiplier, @currency)
   end
 
   def +(addend)
@@ -30,11 +29,11 @@ class Money
   end
 
   def reduce(bank, to)
-    rate = bank.rate(currency, to)
-    Money.new(amount / rate, to)
+    rate = bank.rate(@currency, to)
+    Money.new(@amount / rate, to)
   end
 
   def to_s
-    "#{amount} #{currency}"
+    "#{@amount} #{@currency}"
   end
 end

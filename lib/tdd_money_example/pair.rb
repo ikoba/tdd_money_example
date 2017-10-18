@@ -1,14 +1,13 @@
 class Pair
-  attr_accessor :from, :to
-  private :from=, :to=
+  attr_reader :from, :to
 
   def initialize(from, to)
-    self.from = from
-    self.to = to
+    @from = from
+    @to = to
   end
 
   def ==(object)
-    from == object.from && to == object.to
+    @from == object.from && @to == object.to
   end
 
   def eql?(object)

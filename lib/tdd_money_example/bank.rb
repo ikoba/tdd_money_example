@@ -1,9 +1,8 @@
 class Bank
   attr_accessor :rates
-  private :rates=
 
   def initialize
-    self.rates = {}
+    @rates = {}
   end
   
   def reduce(source, to)
@@ -11,11 +10,11 @@ class Bank
   end
 
   def add_rate(from, to, rate)
-    rates[Pair.new(from, to)] = rate
+    @rates[Pair.new(from, to)] = rate
   end
 
   def rate(from, to)
     return 1 if from == to
-    rates[Pair.new(from, to)]
+    @rates[Pair.new(from, to)]
   end
 end
