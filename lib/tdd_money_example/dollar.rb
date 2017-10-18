@@ -8,4 +8,8 @@ class Dollar
   def *(multiplier)
     return Dollar.new(amount * multiplier)
   end
+
+  def ==(object)
+    amount == object.amount
+  end
 end
